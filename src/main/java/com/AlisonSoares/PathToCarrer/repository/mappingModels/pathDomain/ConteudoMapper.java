@@ -1,6 +1,8 @@
 package com.AlisonSoares.PathToCarrer.repository.mappingModels.pathDomain;
 
-import com.AlisonSoares.PathToCarrer.repository.mappingModels.pathDomain.finitas.TipoConteudo;
+import com.AlisonSoares.PathToCarrer.model.pathDomain.finitas.TipoConteudo;
+import com.AlisonSoares.PathToCarrer.repository.mappingModels.exercicioDomain.ConjuntoExerciciosMapper;
+import com.AlisonSoares.PathToCarrer.repository.mappingModels.exercicioDomain.ConjuntoPossuiExercicioMapper;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,4 +26,10 @@ public class ConteudoMapper {
 
     @OneToMany(mappedBy = "conteudoID", fetch = FetchType.LAZY)
     private List<IndicesModuloMapper> indicesModuloMappers;
+
+    @OneToMany(mappedBy = "conteudoID", fetch = FetchType.LAZY)
+    private List<ConjuntoExerciciosMapper> conjuntoExerciciosMappers;
+
+    @OneToMany(mappedBy = "conteudoID", fetch = FetchType.LAZY)
+    private List<ConjuntoPossuiExercicioMapper> conjuntoPossuiExercicioMappers;
 }

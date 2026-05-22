@@ -1,5 +1,6 @@
 package com.AlisonSoares.PathToCarrer.repository.mappingModels.usuariodDomain;
 
+import com.AlisonSoares.PathToCarrer.repository.mappingModels.exercicioDomain.ConjuntoExerciciosMapper;
 import com.AlisonSoares.PathToCarrer.repository.mappingModels.pathDomain.PathMapper;
 import jakarta.persistence.*;
 
@@ -20,6 +21,11 @@ public class UsuarioMapper {
     @OneToMany(mappedBy = "usuarioID", fetch = FetchType.LAZY)
     private List<ConteudoConsumidoMapper> conteudoConsumidos;
 
-    @OneToMany(mappedBy = "pathID", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "usuarioID", fetch = FetchType.LAZY)
     private List<PathMapper> pathMapper;
+
+    @OneToMany(mappedBy = "usuarioID", fetch = FetchType.LAZY)
+    private List<ConjuntoExerciciosMapper> conjuntoExerciciosMappers;
+
+
 }

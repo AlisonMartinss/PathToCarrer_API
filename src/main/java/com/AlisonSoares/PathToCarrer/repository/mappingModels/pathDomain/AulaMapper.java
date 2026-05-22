@@ -10,7 +10,7 @@ import lombok.Setter;
 import java.time.LocalDate;
 @Entity
 @Table(name = "aula")
-@PrimaryKeyJoinColumn(name = "aulaID")
+@PrimaryKeyJoinColumn(name = "conteudoID")
 
 @Getter
 @Setter
