@@ -13,16 +13,16 @@ import lombok.Setter;
 @NoArgsConstructor
 public class IndicesModuloMapper {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long indiceModuloID;
-    private int indice;
+    @EmbeddedId
+    private ComposekeyIndiceModuloMapper composekeyIndiceModuloMapper = new  ComposekeyIndiceModuloMapper();
 
     @ManyToOne
+    @MapsId("moduloID")
     @JoinColumn(name = "moduloID")
     private ModuloMapper moduloID;
 
     @ManyToOne
     @JoinColumn(name = "conteudoID")
     private ConteudoMapper conteudoID;
+
 }

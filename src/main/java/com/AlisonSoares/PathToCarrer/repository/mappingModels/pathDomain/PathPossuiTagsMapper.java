@@ -12,15 +12,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class PathPossuiTagsMapper {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long pathTagsID;
 
     @ManyToOne
+    @MapsId("pathID")
     @JoinColumn(name = "pathID")
     private PathMapper pathID;
 
     @ManyToOne
+    @MapsId("tagID")
     @JoinColumn(name = "tagID")
     private TagsMapper tagID;
 }
